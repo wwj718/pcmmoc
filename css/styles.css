@@ -302,33 +302,21 @@ ul.classify-first li a.classify-second-more {
     margin: 0;
     background: #fff;
     text-align: center;
-}
-.title{
-    height: 70px;
+    padding-top: 30px;
 }
 .title >h1 {
     font: 38px'微软雅黑';
     color: #85b200;
     margin: 0;
-    clear: both;
-    height: 38px;
     line-height: 38px;
 }
-.title-content {
-    height: 70px;
-}
-.title-content >p {
+.title >p {
     font: 20px'微软雅黑';
-    clear: both;
     margin: 0;
-}
-.title-change{
-    height: 70px;
 }
 .title-change >ul {
     list-style: none;
     text-align: center;
-    clear: both;
 }
 .title-change >ul >li {
     display: inline-block;
@@ -363,6 +351,36 @@ ul.classify-first li a.classify-second-more {
     height: 100%;
     margin-bottom: -31px;
 }
+.new-classes li {
+    margin-bottom: 20px;
+    /*width: auto;*/
+}
+.new-class {
+    margin: 0 auto;
+}
+.new-class>img {
+}
+.caption {
+    margin-top: 5px;
+}
+.caption>img {
+    vertical-align: top;
+}
+.caption-text {
+    display: inline-block;
+    font:12px'微软雅黑';
+    text-align: left;
+}
+.caption-text>h2 {
+    font:18px'微软雅黑';
+}
+.caption-text>h2>a {
+    text-decoration: none;
+    color: #000;
+}
+.caption-text>span {
+    margin-right: 11px;
+}
 /*最新上线结束*/
  @media(min-width: 1200px) {
     .all-class {
@@ -387,7 +405,18 @@ ul.classify-first li a.classify-second-more {
         border-radius: 5px;
         -webkit-border-radius: 5px;
     }
-    .title,.title-content{
+    .title, .title-content {
         text-align: left;
+    }
+    .title>h1, .title>p {
+        display: inline;
+    }
+    .title>p {
+        margin-left: 35px;
+    }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .new-class>img {
+        height: 127px;
     }
 }
