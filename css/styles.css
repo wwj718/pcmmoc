@@ -303,6 +303,7 @@ ul.classify-first li a.classify-second-more {
     background: #fff;
     text-align: center;
     padding-top: 30px;
+    padding-bottom: 40px;
 }
 .title >h1 {
     font: 38px'微软雅黑';
@@ -381,14 +382,224 @@ ul.classify-first li a.classify-second-more {
 .caption-text>span {
     margin-right: 11px;
 }
+a.more-class {
+    text-decoration: none;
+    font: 20px'微软雅黑';
+    color: #000;
+}
+a.more-class:hover {
+    color: #b3b3ac;
+}
 /*最新上线结束*/
+
+/*课程动态*/
+ #dynamic {
+    width: 100%;
+    background: #85b200;
+    padding:45px 0;
+}
+.course-dynamic-wrap {
+    background: #fff;
+    border: 1px solid #1a6600;
+    margin: 0 auto;
+    padding: 25px 0 50px;
+    text-align: center;
+}
+.course-dynamic-title>h1 {
+    font: 18px'微软雅黑';
+    color: #85b200;
+}
+.course-dynamic-classes {
+    list-style: none;
+    margin: 0;
+}
+.course-dynamic-classes>li {
+    display: inline-block;
+}
+.course-dynamic-classes >li>a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #85b200;
+    font: 14px'微软雅黑';
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.course-dynamic-classes>li>a:hover {
+    color: #fff;
+    background: #85b200;
+}
+.course-dynamic-details>ul {
+    padding: 0 5%;
+}
+.course-dynamic-details>ul>li {
+    border-bottom: 1px solid #85b200;
+    padding: 25px 0;
+}
+.details-body {
+    text-align: left;
+    margin-top: 15px;
+}
+.details-body a.link {
+    color: #85b200;
+}
+.details-footer {
+    margin-top: 10px;
+    text-align: right;
+}
+.details-footer>span {
+    margin: 0 10px;
+}
+.share, .comment, .mark {
+    display: inline-block;
+    width: 20px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.share {
+    background: url(../imgs/list1.jpg) no-repeat;
+}
+.comment {
+    background: url(../imgs/list2.jpg) no-repeat;
+}
+.mark {
+    background: url(../imgs/list3.jpg) no-repeat;
+}
+.person-info>img {
+    width: 45px;
+    height: 45px;
+    vertical-align: top;
+}
+.person-info>ul {
+    display: inline-block;
+    list-style: none;
+    margin-left: 5px;
+    text-align: left;
+}
+.person-info-name {
+    margin-bottom: 5px;
+    font: 16px'微软雅黑';
+}
+.range-ico {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+    margin-right: 5px;
+}
+.range1{
+    background: url(../imgs/range1.jpg) no-repeat;
+}
+.range2{
+    background: url(../imgs/range2.jpg) no-repeat;
+}
+.collage {
+    font: 18px'宋体';
+    color: #85b200;
+}
+.aside {
+    background: #fff;
+    border: 1px solid #1a6600;
+    margin: 0 auto;
+    padding: 25px 0 50px;
+}
+.announcement >h1 {
+    font: 18px'微软雅黑';
+    color: #85b200;
+    text-align: center;
+}
+.announcement>p {
+    text-indent: 28px;
+    margin: 0 28px;
+}
+.ranking {
+    margin-top: 75px;
+}
+.ranking>h1 {
+    font: 18px'微软雅黑';
+    color: #85b200;
+    display: inline;
+    margin-left: 40px;
+}
+.ranking>ul.classes {
+    float: right;
+    margin-right: 5px;
+    display: inline-block;
+}
+.ranking>ul>li {
+    display: inline-block;
+}
+.ranking>ul>li>a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #85b200;
+    font: 14px'微软雅黑';
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.ranking>ul>li>a:hover {
+    color: #fff;
+    background: #85b200;
+}
+.rank {
+    text-align: center;
+}
+.rank>li {
+    border-bottom: 1px solid #85b200;
+    width: 90%;
+    text-align: left;
+    padding: 14px 0;
+}
+.rank>li>img {
+    vertical-align: top;
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+}
+.ranking-info {
+    display: inline-block;
+    margin-left: 15px;
+}
+.ranking-info .name {
+    font: 16px'黑体';
+    color: #000;
+    margin-bottom: 8px;
+}
+.ranking-info .content {
+    font: 14px'宋体';
+    color: #666666;
+    margin: 0;
+}
+a.rank-more, a.dynamic-more {
+    color: #85b200;
+    float: right;
+    margin-right: 8%;
+}
+/*课程动态结束*/
+
+/*底部*/
+ #footer {
+    text-align: center;
+    padding: 10px 0;
+}
+#footer ul li {
+    border-right: 1px solid #000;
+    padding: 0 30px;
+}
+#footer ul li a {
+    font: 14px'微软雅黑';
+    color:#000;
+}
+/*底部结束*/
  @media(min-width: 1200px) {
     .all-class {
         width: 30px;
     }
 }
 @media(min-width: 768px) {
-    .classify-first-more, .classify-first, .image-nav {
+    .aside, .classify-first-more, .classify-first, .image-nav {
         width: 80%;
     }
     ul.classify-first {
@@ -413,6 +624,29 @@ ul.classify-first li a.classify-second-more {
     }
     .title>p {
         margin-left: 35px;
+    }
+    .course-dynamic-wrap {
+        width: 95%;
+    }
+    .course-dynamic-title>h1 {
+        float: left;
+    }
+    .course-dynamic-classes {
+        float: right;
+        margin-top: 10px;
+    }
+    .course-dynamic-title {
+        padding: 0 5%;
+    }
+    .person-info {
+        float: left;
+    }
+    .collage {
+        float: right;
+    }
+    #footer ul {
+        height: 110px;
+        line-height: 110px;
     }
 }
 @media (min-width: 768px) and (max-width: 979px) {
