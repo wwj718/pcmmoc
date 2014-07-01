@@ -352,17 +352,50 @@ ul.classify-first li a.classify-second-more {
     height: 100%;
     margin-bottom: -31px;
 }
-.new-classes li {
+.new-classes>li {
     margin-bottom: 20px;
-    /*width: auto;*/
 }
 .new-class {
     margin: 0 auto;
 }
 .new-class>img {
 }
-.caption {
-    margin-top: 5px;
+.new-class-hover {
+    width: 66%;
+    background: #85b200;
+    color: #fff;
+    padding: 4% 5%;
+    text-align: left;
+}
+.new-class-hover>img {
+    width: 55px;
+    vertical-align: top;
+}
+.new-class-hover>ul {
+    margin: 7px 0 0 0;
+    list-style: none;
+    display: inline-block;
+}
+.new-class-hover>ul>li {
+    margin: 0;
+}
+.caption-hover {
+    margin: 5px auto 0;
+    width: 95%;
+}
+.caption-text-hover>p {
+    line-height: 25px;
+    font-size: 13px;
+}
+.new-class-hover-footer>a {
+    float: right;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url(../imgs/new-class-hover-footer.png) no-repeat;
+}
+.new-class-hover-footer {
+    font: 16px'微软雅黑';
 }
 .caption>img {
     vertical-align: top;
@@ -488,10 +521,10 @@ a.more-class:hover {
     vertical-align: top;
     margin-right: 5px;
 }
-.range1{
+.range1 {
     background: url(../imgs/range1.jpg) no-repeat;
 }
-.range2{
+.range2 {
     background: url(../imgs/range2.jpg) no-repeat;
 }
 .collage {
@@ -597,6 +630,9 @@ a.rank-more, a.dynamic-more {
     .all-class {
         width: 30px;
     }
+    .new-classes>li {
+        min-height: 230px;
+    }
 }
 @media(min-width: 768px) {
     .aside, .classify-first-more, .classify-first, .image-nav {
@@ -653,4 +689,10 @@ a.rank-more, a.dynamic-more {
     .new-class>img {
         height: 127px;
     }
+    .new-class-hover>img {
+        height: 55px;
+    }
+}
+@media (max-width: 768px) {
+
 }
