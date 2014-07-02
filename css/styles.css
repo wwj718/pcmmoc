@@ -375,10 +375,8 @@ ul.classify-first li a.classify-second-more {
 .new-class>img {
 }
 .new-class-hover {
-    width: 66%;
     background: #85b200;
     color: #fff;
-    padding: 4% 5%;
     text-align: left;
 }
 .new-class-hover>img {
@@ -640,7 +638,7 @@ a.rank-more, a.dynamic-more {
     color:#000;
 }
 /*底部结束*/
-@media(min-width: 768px) {
+ @media(min-width: 768px) {
     .aside, .classify-first-more, .classify-first, .image-nav {
         width: 80%;
     }
@@ -704,6 +702,21 @@ a.rank-more, a.dynamic-more {
     .latest-content {
         width: 1200px;
     }
+    /*完善最新上线中的各项显示*/
+    .front .new-class {
+        height: 230px;
+    }
+    .front .caption {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .back .new-class {
+        height: 205px;
+    }
+    .new-class-hover {
+        width: 280px;
+        padding: 15px 10px 10px 10px;
+    }
 }
 @media (min-width: 979px) and (max-width: 1200px) {
     .latest-wrap {
@@ -711,6 +724,21 @@ a.rank-more, a.dynamic-more {
     }
     .latest-content {
         width: 960px;
+    }
+    /*完善最新上线中的各项显示*/
+    .front .new-class {
+        height: 230px;
+    }
+    .front .caption {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .back .new-class {
+        height: 205px;
+    }
+    .new-class-hover {
+        width: 280px;
+        padding: 15px 10px 10px 10px;
     }
 }
 @media (min-width: 768px) and (max-width: 979px) {
@@ -726,7 +754,45 @@ a.rank-more, a.dynamic-more {
     .latest-content {
         width: 744px;
     }
+    /*完善最新上线中的各项显示*/
+    .front .new-class {
+        height: 260px;
+    }
+    .front .caption {
+        width: 228px;
+        margin: 0 auto;
+    }
+    .back .new-class {
+        height: 235px;
+    }
+    .new-class-hover {
+        width: 208px;
+        padding: 15px 10px 10px 10px;
+    }
 }
 @media (max-width: 768px) {
-
+    /*完善最新上线中的各项显示*/
+    .title>p{
+        margin-top: 20px;
+    }
+    .title-change{
+        margin-top: 20px;
+    }
+    .title-change>ul{
+        margin: 0;
+    }
+    .front .new-class {
+        height: 230px;
+    }
+    .front .caption {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .back .new-class {
+        height: 205px;
+    }
+    .new-class-hover {
+        width: 280px;
+        padding: 15px 10px 10px 10px;
+    }
 }
