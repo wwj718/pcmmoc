@@ -337,6 +337,12 @@ ul.classify-first li a.classify-second-more {
     background: #85b200;
     color: #fff;
 }
+.title-change >ul >li >a.title-change-active {
+    font: 16px'微软雅黑';
+    text-decoration: none;
+    background: #85b200;
+    color: #fff;
+}
 .title .floater {
     float: left;
     height: 100%;
@@ -351,6 +357,14 @@ ul.classify-first li a.classify-second-more {
     float: left;
     height: 100%;
     margin-bottom: -31px;
+}
+.latest-wrap {
+    position: relative;
+    left: 0;
+}
+.latest-content {
+    position: relative;
+    float: left;
 }
 .new-classes>li {
     margin-bottom: 20px;
@@ -626,14 +640,6 @@ a.rank-more, a.dynamic-more {
     color:#000;
 }
 /*底部结束*/
- @media(min-width: 1200px) {
-    .all-class {
-        width: 30px;
-    }
-    .new-classes>li {
-        min-height: 230px;
-    }
-}
 @media(min-width: 768px) {
     .aside, .classify-first-more, .classify-first, .image-nav {
         width: 80%;
@@ -685,12 +691,40 @@ a.rank-more, a.dynamic-more {
         line-height: 110px;
     }
 }
+@media(min-width: 1200px) {
+    .all-class {
+        width: 30px;
+    }
+    .new-classes>li {
+        min-height: 230px;
+    }
+    .latest-wrap {
+        width: 3600px;
+    }
+    .latest-content {
+        width: 1200px;
+    }
+}
+@media (min-width: 979px) and (max-width: 1200px) {
+    .latest-wrap {
+        width: 2880px;
+    }
+    .latest-content {
+        width: 960px;
+    }
+}
 @media (min-width: 768px) and (max-width: 979px) {
     .new-class>img {
         height: 127px;
     }
     .new-class-hover>img {
         height: 55px;
+    }
+    .latest-wrap {
+        width: 2232px;
+    }
+    .latest-content {
+        width: 744px;
     }
 }
 @media (max-width: 768px) {
