@@ -105,7 +105,7 @@
 /*全部课程*/
  .all-class {
     text-align: center;
-    /*width: 30px;*/
+    width: 30px;
 }
 .all-class a {
     color: #888;
@@ -130,9 +130,6 @@
     text-align: center;
     margin-top: 20px;
 }
-.login ul li {
-    padding: 0 15px;
-}
 .login ul li a {
     font-size: 18px;
     color: #c1c1b5;
@@ -140,6 +137,9 @@
 }
 .login ul li a:hover {
     color:#6dd900;
+}
+.login ul li {
+    padding: 0 15px;
 }
 #Registration {
     border-right: 2px solid #575747;
@@ -186,16 +186,18 @@ ul.classify-first > li {
     border-top: 1px solid #d38783;
 }
 ul.classify-first li a {
+    display: inline-block;
     color: #fff;
     font-family:'宋体';
     font-weight: bold;
     margin-right: 0px;
 }
 ul.classify-second {
-    display: inline;
+    display: inline-block;
 }
 ul.classify-second > li {
-    padding: 0;
+    padding: 6px 0 4px;
+    /*background: url(../imgs/sjx.png) no-repeat 50% 0%;*/
 }
 ul.classify-second >li >a {
     display: block;
@@ -213,6 +215,7 @@ ul.classify-second >li >a {
 ul.classify-second li a:hover {
     color:#bc4943;
     background: #fff;
+    /*background: url(../imgs/sjx.png) no-repeat 50% 0%;*/
 }
 ul.classify-first li a.classify-second-more {
     position: absolute;
@@ -262,7 +265,7 @@ ul.classify-first li a.classify-second-more {
     border-top: 1px solid #c2d980;
 }
 .green ul.classify-first > a.classify-second-more {
-    background:
+    /*background:*/
 }
 .green .classify-first-more a:hover {
     color: #fff;
@@ -293,6 +296,57 @@ ul.classify-first li a.classify-second-more {
     background: #fff;
 }
 /*蓝色样式结束*/
+
+/*classify-second-hover样式*/
+ ul.classify-first >li.classify-second-hover {
+    position: absolute;
+    width: 100%;
+    padding-left: 0;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    top: -111px;
+    text-align: center;
+    display: none;
+    /*border: 1px solid #fff;*/
+}
+.classify-second-caption>img {
+    width: 55px;
+    height: 55px;
+    vertical-align: top;
+}
+.classify-second-caption-text {
+    display: inline-block;
+}
+.classify-second-caption-text>h2 {
+    font-size: 18px;
+    color: #000;
+    height: 18px;
+    line-height:18px;
+    margin-bottom: -5px;
+}
+.classify-second-caption-text>span {
+    color: #686859;
+    font-size: 12px;
+}
+.classify-first .classify-second-hover>a {
+    display: block;
+    height: 24px;
+    width: 80px;
+    margin: 10px auto;
+    line-height: 24px;
+    position: relative;
+    font-weight: bold;
+    font: 14px"微软雅黑";
+    color: #fff;
+    padding: 2px 5px;
+    background: #79a200;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.classify-second-hover>img{
+    position: absolute;
+}
+/*classify-second-hover样式结束*/
 
 /*学堂在线结束*/
 
@@ -378,6 +432,7 @@ ul.classify-first li a.classify-second-more {
     background: #85b200;
     color: #fff;
     text-align: left;
+    padding: 15px 10px 10px 10px;
 }
 .new-class-hover>img {
     width: 55px;
@@ -638,6 +693,61 @@ a.rank-more, a.dynamic-more {
     color:#000;
 }
 /*底部结束*/
+
+/*分类选择*/
+ #selects {
+    background: #eeeeee;
+}
+.collages {
+    margin-top: 25px;
+}
+.collages>ul {
+    padding: 22px 37px;
+}
+.collages>ul>li {
+    margin-left: 50px;
+}
+.collages>ul>li>a {
+    display: block;
+    height: 26px;
+    padding: 2px 10px;
+    line-height: 26px;
+    text-decoration: none;
+    background: #fff;
+    color: #000;
+    font:'宋体';
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.collages>ul>li>a:hover {
+    color: #fff;
+    background: #85b200;
+}
+.sortbar {
+    margin-top: 25px;
+}
+.collages>ul, .sortbar>ul {
+    border:1px solid #cccccc;
+    text-align: left;
+}
+.collages>ul>li, .sortbar>ul>li {
+    text-align: center;
+    padding-left: 0;
+}
+.sortbar>ul>li>a {
+    display: block;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    color: #000;
+    font:'宋体';
+}
+.sortbar>ul>li>a:hover {
+    color: #fff;
+    background: #85b200;
+}
+/*media queries*/
  @media(min-width: 768px) {
     .aside, .classify-first-more, .classify-first, .image-nav {
         width: 80%;
@@ -690,9 +800,6 @@ a.rank-more, a.dynamic-more {
     }
 }
 @media(min-width: 1200px) {
-    .all-class {
-        width: 30px;
-    }
     .new-classes>li {
         min-height: 230px;
     }
@@ -701,6 +808,23 @@ a.rank-more, a.dynamic-more {
     }
     .latest-content {
         width: 1200px;
+    }
+    /*完善head*/
+    #searchTextWrap {
+        width: 430px;
+    }
+    #searchText {
+        width: 416px;
+    }
+    .all-class {
+        width: 30px;
+    }
+    .login ul li {
+        padding: 0 15px;
+    }
+    #Registration {
+        border-right: 2px solid #575747;
+        padding-right: 17px;
     }
     /*完善最新上线中的各项显示*/
     .front .new-class {
@@ -725,6 +849,23 @@ a.rank-more, a.dynamic-more {
     .latest-content {
         width: 960px;
     }
+    /*完善head*/
+    #searchTextWrap {
+        width: 340px;
+    }
+    #searchText {
+        width: 326px;
+    }
+    .all-class {
+        width: 30px;
+    }
+    .login ul li {
+        padding: 0 15px;
+    }
+    #Registration {
+        border-right: 2px solid #575747;
+        padding-right: 17px;
+    }
     /*完善最新上线中的各项显示*/
     .front .new-class {
         height: 230px;
@@ -741,7 +882,7 @@ a.rank-more, a.dynamic-more {
         padding: 15px 10px 10px 10px;
     }
 }
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 767px) and (max-width: 979px) {
     .new-class>img {
         height: 127px;
     }
@@ -753,6 +894,19 @@ a.rank-more, a.dynamic-more {
     }
     .latest-content {
         width: 744px;
+    }
+    /*完善head*/
+    .all-class {
+        width: 30px;
+    }
+    .all-class>a, #searchText, #search-button, .search-triggers .drop-list li a {
+        font-size: 12px;
+    }
+    .login ul li {
+        padding: 0 3px;
+    }
+    #Registration {
+        padding-right: 5px;
     }
     /*完善最新上线中的各项显示*/
     .front .new-class {
@@ -770,17 +924,25 @@ a.rank-more, a.dynamic-more {
         padding: 15px 10px 10px 10px;
     }
 }
-@media (max-width: 768px) {
-    /*完善最新上线中的各项显示*/
-    .title>p{
+@media (max-width: 767px) {
+    .title>p {
         margin-top: 20px;
     }
-    .title-change{
+    .title-change {
         margin-top: 20px;
     }
-    .title-change>ul{
+    .title-change>ul {
         margin: 0;
     }
+    /*完善head*/
+    .all-class {
+        width: auto;
+        margin: 10px 0;
+    }
+    .login {
+        margin-top: 0px;
+    }
+    /*完善最新上线中的各项显示*/
     .front .new-class {
         height: 230px;
     }
@@ -793,6 +955,15 @@ a.rank-more, a.dynamic-more {
     }
     .new-class-hover {
         width: 280px;
+        padding: 15px 10px 10px 10px;
+    }
+}
+@media (max-width: 358px) {
+    .back .new-class {
+        height: auto;
+    }
+    .new-class-hover {
+        width: 90%;
         padding: 15px 10px 10px 10px;
     }
 }
