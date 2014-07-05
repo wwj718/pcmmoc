@@ -343,7 +343,7 @@ ul.classify-first li a.classify-second-more {
     border-radius: 5px;
     -webkit-border-radius: 5px;
 }
-.classify-second-hover>img{
+.classify-second-hover>img {
     position: absolute;
 }
 /*classify-second-hover样式结束*/
@@ -543,6 +543,21 @@ a.more-class:hover {
 .details-body a.link {
     color: #85b200;
 }
+.quote{
+    position: relative;
+    background: #f7f7fd;
+    border: 1px solid #dddddd;
+    padding: 15px 15px;
+}
+.quote-sjx{
+    display: block;
+    position: absolute;
+    top: -9px;
+    left: 30px;
+    width: 13px;
+    height: 9px;
+    background: url(../imgs/quote-sjx.png) no-repeat;
+}
 .details-footer {
     margin-top: 10px;
     text-align: right;
@@ -660,7 +675,7 @@ a.more-class:hover {
 }
 .ranking-info {
     display: inline-block;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 .ranking-info .name {
     font: 16px'黑体';
@@ -841,6 +856,11 @@ a.rank-more, a.dynamic-more {
         width: 280px;
         padding: 15px 10px 10px 10px;
     }
+    /*完善课程动态显示*/
+    .person-info {
+        width: 200px;
+        text-align: left;
+    }
 }
 @media (min-width: 979px) and (max-width: 1200px) {
     .latest-wrap {
@@ -880,6 +900,26 @@ a.rank-more, a.dynamic-more {
     .new-class-hover {
         width: 280px;
         padding: 15px 10px 10px 10px;
+    }
+    /*完善课程动态中的各项显示*/
+    .person-info {
+        width: 200px\0/;
+        text-align: left;
+    }
+    .collage{
+        font-size: 14px\0/;
+    }
+    .ranking>h1 {
+        margin-left: 20px;
+    }
+    .ranking-info {
+        margin-left: 2px;
+    }
+    .aside, .classify-first-more, .classify-first, .image-nav {
+        width: 90%;
+    }
+    .classify-first li {
+        padding-left: 15px;
     }
 }
 @media (min-width: 767px) and (max-width: 979px) {
@@ -922,6 +962,44 @@ a.rank-more, a.dynamic-more {
     .new-class-hover {
         width: 208px;
         padding: 15px 10px 10px 10px;
+    }
+    /*完善课程动态中的各项显示*/
+    .person-info {
+        width: 200px\0/;
+        text-align: left;
+    }
+    .collage{
+        font-size: 14px\0/;
+    }
+    .ranking {
+        text-align: center;
+    }
+    .ranking>ul.classes {
+        float: none;
+        margin: 0;
+    }
+    .ranking>h1 {
+        margin-left: 0;
+    }
+    .rank>li {
+        text-align: center;
+    }
+    .rank>li>img {
+        margin-left: 0;
+    }
+    .ranking-info {
+        margin: 0 auto;
+    }
+    .aside, .classify-first-more, .classify-first, .image-nav {
+        width: 100%;
+    }
+    .classify-first li {
+        padding-left: 5px;
+    }
+    /*完善底部显示*/
+    #footer ul li {
+        border-right: 1px solid #000;
+        padding: 0 15px;
     }
 }
 @media (max-width: 767px) {

@@ -10,10 +10,6 @@
                 borderColor: 'transparent transparent #85b200',
                 top: '14px',
             });
-            // $(".search-ico i").css({
-            //     borderColor: 'transparent transparent #85b200',
-            //     top: '14px',
-            // });
         })
         $(a).mouseleave(function() {
             $(this).parent().parent().css({
@@ -34,16 +30,13 @@
         })
     };
 
-
-    $(document).ready(function() {
-        //搜索按钮变色
+    $(document).ready(function() { //搜索按钮变色
         $("#search-button").mouseenter(function() {
             $(this).css("background", "#6dd900");
         })
         $("#search-button").mouseleave(function() {
             $(this).css("background", "#85b200");
         })
-
         // 学堂在线部分
         $(".red .classify-second li a,.blue .classify-second li a").mouseenter(function() {
             var s = $(this).parent().index(); //获取该a的父元素li的索引值

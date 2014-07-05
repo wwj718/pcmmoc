@@ -3,22 +3,19 @@
 
 <head>
     <meta charset="UTF-8" />
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="mycss2.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <link rel="stylesheet/less" type="text/css" href="css/styles.less">
     <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- 图片翻转插件JS -->
-    <script type="text/javascript" src="js/base.js"></script>
-    <script type="text/javascript" src="js/rotate3di.js"></script>
-    <!-- 图片翻转插件JS结束 -->
-    <!--[if lt IE 9]> 
-        <script src="js/css3-mediaqueries.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -126,7 +123,7 @@
 
                 <div class="span4 red" style="text-align: center;">
                     <div class="image-nav">
-                        <img src="imgs/red.jpg" alt="学科专业" class="img-circle">
+                        <img src="imgs/red-ie.png" alt="学科专业" class="img-circle">
                         <h1>学科专业</h1>
                     </div>
                     <ul class="classify-first" style="position: relative">
@@ -266,7 +263,7 @@
 
                 <div class="span4 green" style="text-align: center;">
                     <div class="image-nav">
-                        <img src="imgs/green.jpg" alt="学科专业" class="img-circle">
+                        <img src="imgs/green-ie.png" alt="学科专业" class="img-circle">
                         <h1>职业应用</h1>
                     </div>
                     <ul class="classify-first">
@@ -359,7 +356,7 @@
                             <a href="#">更多课程</a>
                         </li>
 
-                        
+
                     </ul>
                     <div class="classify-first-more">
                         <div class="floater"></div>
@@ -368,7 +365,7 @@
                 </div>
                 <div class="span4 blue" style="text-align: center;">
                     <div class="image-nav">
-                        <img src="imgs/blue.jpg" alt="学科专业" class="img-circle">
+                        <img src="imgs/blue-ie.png" alt="学科专业" class="img-circle">
                         <h1>机构名校</h1>
                     </div>
                     <ul class="classify-first">
@@ -533,8 +530,8 @@
 
 
             <div class="row" id="latest-row" style="overflow:hidden;">
-                <div class="latest-wrap">
-                    <div class="latest-content">
+                <div class="latest-wrap" id="latest-wrap">
+                    <div class="latest-content" id="latest-content1">
                         <ul class="new-classes unstyled">
                             <li class="span4">
                                 <div class="front">
@@ -766,7 +763,7 @@
                         </ul>
                         <a href="#" class="more-class">查看所有课程（726）......</a>
                     </div>
-                    <div class="latest-content">
+                    <div class="latest-content" id="latest-content2">
                         <ul class="new-classes unstyled">
                             <li class="span4">
                                 <div class="front">
@@ -998,7 +995,7 @@
                         </ul>
                         <a href="#" class="more-class">查看所有课程（726）......</a>
                     </div>
-                    <div class="latest-content">
+                    <div class="latest-content" id="latest-content3">
                         <ul class="new-classes unstyled">
                             <li class="span4">
                                 <div class="front">
@@ -1300,7 +1297,11 @@
                                     <div style="clear: both;"></div>
                                     <div class="details-body">
                                         <p>特别推荐一下，杨老师经历丰富，#美感经济与形象战略#讲座别具风格，请各位同学4月19日下午16：30在商学院508参加<a href="#" class="link">@杨老师</a>的讲座!</p>
-                                        <img src="imgs/pic1.jpg" alt="数据结构">
+                                        <div class="quote">
+                                            <span class="quote-sjx"></span>
+                                            <p><a href="#" class="link">@杨远</a>:很高兴能到<a href="#" class="link">@南京大学</a>开讲座，希望能给大家带来新的视角！</p>
+                                            <img src="imgs/pic2.jpg" alt="数据结构">
+                                        </div>
                                     </div>
                                     <div class="details-footer">
                                         <span>
@@ -1384,6 +1385,10 @@
             </div>
         </div>
     </div>
+    <!-- 图片翻转插件JS -->
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/rotate3di.js"></script>
+    <!-- 图片翻转插件JS结束 -->
     <script src="js/myscripts.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(document).ready(function() {
