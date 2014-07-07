@@ -118,17 +118,119 @@
     <div id="selects">
         <div class="container">
             <div class="subjects">
-
+                <ul class="unstyled inline">
+                    <li class="triggers-wrap">
+                        <div class="collages-triggers">
+                            <ul class="collages-list unstyled">
+                                <li id="subject1"><a>学科1</a>
+                                </li>
+                                <li id="subject2"><a>学科2</a>
+                                </li>
+                                <li id="subject3"><a>学科3</a>
+                                </li>
+                            </ul>
+                            <div class="search-ico">
+                                <i></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">工学(<span>121</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">管理学(<span>89</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">经济学(<span>62</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">军事学(<span>6</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">理学(<span>16</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">教育学(<span>21</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">法学(<span>26</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">历史学(<span>11</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">农学(<span>16</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">文学(<span>116</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">医学(<span>61</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">哲学(<span>16</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">艺术学(<span>18</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">通识课(<span>8</span>)</a>
+                    </li>
+                </ul>
+                <ul class="unstyled inline" style="border:none;">
+                    <li>
+                        <a href="#">计算机科学与技术(<span>21</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">电气工程及其自动化(<span>31</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">建筑学(<span>62</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">土木工程(<span>41</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">电子信息工程(<span>62</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">电子科学与技术(<span>11</span>)</a>
+                    </li>
+                    <li>
+                        <a href="#">车辆工程(<span>31</span>)</a>
+                    </li>
+                </ul>
             </div>
             <div class="collages">
                 <ul class="unstyled inline">
+                    <li class="triggers-wrap">
+                        <div class="collages-triggers">
+                            <ul class="collages-list unstyled">
+                                <li id="subject1"><a>学术型大学</a>
+                                </li>
+                                <li id="subject2"><a>应用型大学</a>
+                                </li>
+                                <li id="subject3"><a>学术型大学</a>
+                                </li>
+                            </ul>
+                            <div class="search-ico">
+                                <i></i>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="#">全部(<span>316</span>)</a>
                     </li>
-                    <li><a href="#">南京大学</a>
+                    <li>
+                        <a href="#">
+                            <img src="imgs/head2.png" alt="南京大学">南京大学</a>
                     </li>
-                    <li><a href="#">华中科技大学</a>
+                    <li>
+                        <a href="#">
+                            <img src="imgs/head2.png" alt="华中科技大学">华中科技大学</a>
                     </li>
-                    <li><a href="#">北京大学</a>
+                    <li>
+                        <a href="#">
+                            <img src="imgs/head2.png" alt="北京大学">北京大学</a>
                     </li>
                 </ul>
             </div>
@@ -175,6 +277,7 @@
     <script type="text/javascript">
     $(document).ready(function() {
         dropList(".drop-list li");
+        dropList2(".collages-list li");
     });
     </script>
 </body>
