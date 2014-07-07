@@ -30,36 +30,6 @@
         })
     };
 
-    function dropList2(a) {
-        $(a).mouseenter(function() {
-            $(this).parent().parent().css({
-                height: '90',
-            });
-            $(this).parent().parent().find(".search-ico i").css({
-                borderColor: 'transparent transparent #85b200',
-                top: '14px',
-            });
-        })
-        $(a).mouseleave(function() {
-            $(this).parent().parent().css({
-                height: '30',
-            });
-            $(this).parent().parent().find(".search-ico i").css({
-                borderColor: '#85b200 transparent transparent',
-                top: '18px',
-            });
-        })
-        $(a).click(function() {
-            var b=$(this).parent();
-            var $a = $(this).detach();
-            $(b).children().first().before($a);
-            $(this).parent().parent().css({
-                height: '30',
-            });
-        })
-    };
-
-
     $(document).ready(function() { //搜索按钮变色
         $("#search-button").mouseenter(function() {
             $(this).css("background", "#6dd900");
