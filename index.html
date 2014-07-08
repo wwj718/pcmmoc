@@ -53,18 +53,19 @@
                                     </div>
                                 </div>
                                 <!-- 搜索文本框 -->
-                                <div class="span4" id="searchTextWrap">
-                                    <form>
-                                        <input class="span4" type="text" id="searchText" placeholder="搜 “形势与政策”，感受国家名师风采">
-                                    </form>
-                                </div>
-                                <!-- 搜索文本框结束 -->
-                                <!-- 搜索按钮 -->
-                                <div class="span1" id="searchButtonWrap">
-                                    <form>
-                                        <button type="button" class="span1" id="search-button">搜索</button>
-                                    </form>
-                                </div>
+                                <form class="span5" action="" method="get" name="search">
+                                    <div class="row">
+                                        <input type="hidden" name="searchType" id="searchType" value="course">
+                                        <div class="span4" id="searchTextWrap">
+                                            <input class="span4" type="text" id="searchText" placeholder="搜 “形势与政策”，感受国家名师风采" name="searchText">
+                                        </div>
+                                        <!-- 搜索文本框结束 -->
+                                        <!-- 搜索按钮 -->
+                                        <div class="span1" id="searchButtonWrap">
+                                            <button type="button" class="span1" id="searchButton" name="searchButton">搜索</button>
+                                        </div>
+                                    </div>
+                                </form>
                                 <!-- 搜索按钮结束 -->
                             </div>
                         </div>
@@ -1393,6 +1394,8 @@
     <script type="text/javascript">
     $(document).ready(function() {
         dropList(".drop-list li");
+        clickList(".search-triggers");
+        changeType(".drop-list li","#searchType");
     });
     </script>
 </body>

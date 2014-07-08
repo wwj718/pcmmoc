@@ -23,10 +23,12 @@
 }
 .search-triggers .drop-list li {
     display: block;
+    position: relative;
     height: 38px;
     line-height: 38px;
     text-align: center;
     background: #fff;
+    z-index: 1;
 }
 .search-triggers .drop-list li a {
     display: block;
@@ -41,14 +43,21 @@
     background: #f0f0f0;
 }
 /*三角形CSS制作*/
- .search-ico i {
+ .search-ico2 i, .search-ico i {
     position: absolute;
-    top:18px;
-    right: 5px;
+    z-index: 2;
     width: 0;
     height: 0;
     border: 4px solid #85b200;
     border-color: #85b200 transparent transparent;
+}
+.search-ico i {
+    top:18px;
+    right: 5px;
+}
+.search-ico2 i {
+    top:14px;
+    right: 5px;
 }
 /*三角形CSS制作结束*/
 
@@ -76,7 +85,7 @@
  #searchButtonWrap {
     margin: 0;
 }
-#search-button {
+#searchButton {
     height: 40px;
     margin-left: 0;
     border:none;
@@ -249,6 +258,7 @@ ul.classify-first li a.classify-second-more {
 .classify-first-more a:hover {
     color: #fff;
     background: #c76661;
+    background: url(../imgs/more23.png)\0/;
 }
 /*绿色样式*/
  .green .image-nav {
@@ -270,6 +280,7 @@ ul.classify-first li a.classify-second-more {
 .green .classify-first-more a:hover {
     color: #fff;
     background: #85b200;
+    background: url(../imgs/more21.png)\0/;
 }
 /*绿色样式结束*/
 
@@ -290,6 +301,7 @@ ul.classify-first li a.classify-second-more {
 .blue .classify-first-more a:hover {
     color: #fff;
     background: #0098ca;
+    background: url(../imgs/more22.png)\0/;
 }
 .blue ul.classify-second li a:hover {
     color:#0098ca;
@@ -304,6 +316,7 @@ ul.classify-first li a.classify-second-more {
     padding-left: 0;
     background: #fff;
     background: rgba(255, 255, 255, 0.8);
+    filter:alpha(opacity=80);
     top: -111px;
     text-align: center;
     display: none;
@@ -340,6 +353,7 @@ ul.classify-first li a.classify-second-more {
     color: #fff;
     padding: 2px 5px;
     background: #79a200;
+    background: url(../imgs/more.png)\0/;
     border-radius: 5px;
     -webkit-border-radius: 5px;
 }
@@ -389,12 +403,14 @@ ul.classify-first li a.classify-second-more {
     font: 16px'微软雅黑';
     text-decoration: none;
     background: #85b200;
+    background: url(../imgs/more3.png)\0/;
     color: #fff;
 }
 .title-change >ul >li >a.title-change-active {
     font: 16px'微软雅黑';
     text-decoration: none;
     background: #85b200;
+    background: url(../imgs/more3.png)\0/;
     color: #fff;
 }
 .title .floater {
@@ -528,6 +544,7 @@ a.more-class:hover {
 .course-dynamic-classes>li>a:hover {
     color: #fff;
     background: #85b200;
+    background: url(../imgs/more4.png)\0/;
 }
 .course-dynamic-details>ul {
     padding: 0 5%;
@@ -657,6 +674,7 @@ a.more-class:hover {
 .ranking>ul>li>a:hover {
     color: #fff;
     background: #85b200;
+    background: url(../imgs/more5.png)\0/;
 }
 .rank {
     text-align: center;
@@ -709,16 +727,54 @@ a.rank-more, a.dynamic-more {
 }
 /*底部结束*/
 
-/*分类选择*/
+/*selects.html*/
  #selects {
-    background: #eeeeee;
+    background: #eee;
     padding-bottom: 20px;
 }
 .subjects, .sortbar, .collages {
     margin-top: 25px;
     border:1px solid #cccccc;
 }
+.collage-wrap, .subject-wrap {
+    position: relative;
+    margin: 20px 0 0 30px;
+    width: 106px;
+    height: 30px;
+    float:left;
+}
+.list-wrap {
+    position: absolute;
+    width: 104px;
+    height: 30px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    z-index: 1;
+}
+.collage-list, .subject-list {
+    margin: 0;
+}
+.collage-list>li, .subject-list>li {
+    position: relative;
+    text-align: center;
+    background: #eee;
+}
+.collage-list>li>a, .subject-list>li>a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    font-size:14px;
+    font-family:"宋体";
+}
+.collage-list>li>a:hover, .subject-list>li>a:hover {
+    background: #fff;
+}
 .subjects>ul, .collages>ul {
+    position: relative;
     margin-left: 20px;
     margin-bottom: 0;
     padding:20px 10px 0;
@@ -739,7 +795,7 @@ a.rank-more, a.dynamic-more {
     text-decoration: none;
     background: #fff;
     color: #000;
-    font:'宋体';
+    font-family:'宋体';
     border-radius: 5px;
     -webkit-border-radius: 5px;
 }
@@ -778,35 +834,75 @@ a.rank-more, a.dynamic-more {
     color: #fff;
     background: #85b200;
 }
-.triggers-wrap{
-    width: 106px;
+/*selects-content部分*/
+ #selects-content {
+    padding-top: 30px;
 }
-.collages-triggers {
-    width: 106px;
-    height: 30px;
-    border: 1px solid #cccccc;
-    overflow: hidden;
-    position: absolute;
-    z-index: 2;
+.content-list>li {
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #85b200;
+    margin-bottom: 40px;
 }
-.collages-list li {
-    display: block;
-    height: 30px;
-    line-height: 30px;
+.content-title {
     text-align: center;
-    position: relative;
-    z-index: 2;
 }
-.collages-list li a {
-    display: block;
-    height: 30px;
-    text-decoration: none;
+.content-details {
+    margin-top: 20px;
+}
+.content-details>ul {
+    text-align: center;
+}
+.content-details>ul>li {
+    padding: 0 30px;
+}
+.content-details>p {
+    margin-top: 17px;
+    padding: 0 10px;
+    line-height: 30px;
+    font:14px'微软雅黑';
+    color: #535362;
+}
+.teacher-online {
+    color: #85b200;
+}
+.content-title>h1 {
+    font: bold 18px'微软雅黑';
+    margin: 20px 0 8px;
+}
+.content-title>div>img {
+    width: 55px;
+    height: 55px;
+    vertical-align: top;
+}
+.teacher-info {
+    display: inline-block;
+    margin-top: 7px;
+    text-align: left;
+}
+.teacher-info>p {
+    margin: 0;
+    color: #535362;
+}
+.content-title>p {
+    font-weight: bold;
+    margin: 12px 0 0;
+}
+.content-details img {
+    vertical-align: top;
+    margin-right: 10px;
+}
+.selects-more {
+    background: #eee;
+    text-align: center;
+    border-bottom: 1px solid #85b200;
+    height: 60px;
+    line-height: 60px;
+}
+.selects-more>a {
+    font:bold 18px'微软雅黑';
     color: #000;
-    cursor: pointer;
-        /*background: #eee;*/
-}
-.collages-list li a:hover {
-    background: #fff;
 }
 /*media queries*/
  @media(min-width: 768px) {
@@ -907,6 +1003,19 @@ a.rank-more, a.dynamic-more {
         width: 200px;
         text-align: left;
     }
+    /*完善selects-content部分*/
+    .content-title {
+        float: left;
+        width: 260px;
+    }
+    .content-details {
+        float: left;
+        width: 580px;
+    }
+    .content-image {
+        float: right;
+        width: 280px;
+    }
 }
 @media (min-width: 979px) and (max-width: 1200px) {
     .latest-wrap {
@@ -967,6 +1076,10 @@ a.rank-more, a.dynamic-more {
     .classify-first li {
         padding-left: 15px;
     }
+    /*完善selects-content部分*/
+    .content-image {
+        text-align: center;
+    }
 }
 @media (min-width: 767px) and (max-width: 979px) {
     .new-class>img {
@@ -985,7 +1098,7 @@ a.rank-more, a.dynamic-more {
     .all-class {
         width: 30px;
     }
-    .all-class>a, #searchText, #search-button, .search-triggers .drop-list li a {
+    .all-class>a, #searchText, #searchButton, .search-triggers .drop-list li a {
         font-size: 12px;
     }
     .login ul li {
@@ -993,6 +1106,12 @@ a.rank-more, a.dynamic-more {
     }
     #Registration {
         padding-right: 5px;
+    }
+    #searchTextWrap {
+        width: 268px;
+    }
+    #searchText {
+        width: 268px;
     }
     /*完善最新上线中的各项显示*/
     .front .new-class {
@@ -1047,6 +1166,10 @@ a.rank-more, a.dynamic-more {
         border-right: 1px solid #000;
         padding: 0 15px;
     }
+    /*完善selects-content部分*/
+    .content-image {
+        text-align: center;
+    }
 }
 @media (max-width: 767px) {
     .title>p {
@@ -1081,21 +1204,33 @@ a.rank-more, a.dynamic-more {
         width: 280px;
         padding: 15px 10px 10px 10px;
     }
+    /*完善课程动态的各项显示*/
+    .course-dynamic-title>h1 {
+        margin: 0;
+    }
+    .collage {
+        margin-top: 10px;
+    }
     /*完善分类选择中的各项显示*/
-    .collages>ul, .sortbar>ul,.subjects>ul{
+    .collages>ul, .sortbar>ul, .subjects>ul {
         margin: 0;
         text-align: center;
     }
-    .collages>ul>li, .subjects>ul>li{
+    .collages>ul>li, .subjects>ul>li {
         width: 90%;
         margin-left: 0;
     }
-    .triggers-wrap{
-        height: 30px;
+    /*完善selects-content部分*/
+    .content-image {
+        text-align: center;
     }
-    .collages-triggers{
+    .content-details>ul>li {
+        margin-bottom: 5px;
+    }
+    .collage-wrap, .subject-wrap {
+        float: none;
         left: 50%;
-        margin-left: -53px;
+        margin-left: -54px;
     }
 }
 @media (max-width: 358px) {

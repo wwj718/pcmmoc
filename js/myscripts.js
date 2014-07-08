@@ -1,4 +1,4 @@
-    //定义下拉菜单的函数
+    //顶部下拉菜单的函数
 
     function dropList(a) {
         $(a).mouseenter(function() {
@@ -22,9 +22,11 @@
             });
         })
         $(a).click(function() {
+            //调整选择的搜索类型的位置
+            var b = $(this).parent();
             var $a = $(this).detach();
-            $(a).first().before($a);
-            $(this).parent().parent().css({
+            $(b).children().first().before($a);
+            $(b).parent().css({
                 height: '38',
             });
         })
@@ -35,22 +37,22 @@
             $(this).parent().parent().css({
                 height: '90',
             });
-            $(this).parent().parent().find(".search-ico i").css({
+            $(this).parent().parent().find(".search-ico2 i").css({
                 borderColor: 'transparent transparent #85b200',
-                top: '14px',
+                top: '10px',
             });
         })
         $(a).mouseleave(function() {
             $(this).parent().parent().css({
                 height: '30',
             });
-            $(this).parent().parent().find(".search-ico i").css({
+            $(this).parent().parent().find(".search-ico2 i").css({
                 borderColor: '#85b200 transparent transparent',
-                top: '18px',
+                top: '14px',
             });
         })
         $(a).click(function() {
-            var b=$(this).parent();
+            var b = $(this).parent();
             var $a = $(this).detach();
             $(b).children().first().before($a);
             $(this).parent().parent().css({
@@ -59,20 +61,129 @@
         })
     };
 
+    //使移动端顶部的下拉列表功能
+
+    function clickList(a) {
+        //定义单击出li的高度及总的ul高度
+        var liHeight = $(a).find("li").height();
+        var ulHeight = 3 * liHeight;
+        //平台、设备和操作系统     
+        var system = {
+            win: false,
+            mac: false,
+            xll: false
+        };
+        //检测平台     
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+        //跳转语句     
+        if (system.win || system.mac || system.xll) {} else {
+            var count = 0;
+            $(a).click(function() {
+                if (count == 1) {
+                    $(this).css({
+                        height: liHeight,
+                    });
+                    count--;
+                    $(this).parent().parent().find(".search-ico i").css({
+                        borderColor: '#85b200 transparent transparent',
+                        top: '18px',
+                    });
+                    $(this).find("a").css("background", "#fff");
+                } else if (count == 0) {
+                    $(this).css({
+                        height: ulHeight,
+                    });
+                    count++;
+                    $(this).parent().parent().find(".search-ico i").css({
+                        borderColor: 'transparent transparent #85b200',
+                        top: '14px',
+                    });
+                }
+            });
+        }
+    };
+
+
+    function clickList2(a) {
+        //定义单击出li的高度及总的ul高度
+        var liHeight = $(a).find("li").height();
+        var ulHeight = 3 * liHeight;
+        //平台、设备和操作系统     
+        var system = {
+            win: false,
+            mac: false,
+            xll: false
+        };
+        //检测平台     
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+        //跳转语句     
+        if (system.win || system.mac || system.xll) {} else {
+            var count = 0;
+            $(a).click(function() {
+                if (count == 1) {
+                    $(this).parent().css({
+                        height: liHeight,
+                    });
+                    count--;
+                    $(this).parent().find(".search-ico2 i").css({
+                        borderColor: '#85b200 transparent transparent',
+                        top: '14px',
+                    });
+                    $(this).find("a").css("background", "#eee");
+                } else if (count == 0) {
+                    $(this).parent().css({
+                        height: ulHeight,
+                    });
+                    count++;
+                    $(this).parent().find(".search-ico2 i").css({
+                        borderColor: 'transparent transparent #85b200',
+                        top: '10px',
+                    });
+                }
+            });
+        }
+    };
+
+    // 更改input[type="hidden"]的值
+
+    function changeType(a, b) {
+        $(a).click(function() {
+            // 更改input#searchType的值
+            var typeText = $(this).children("a").text();
+            var typeId = $(this).attr("id");
+            if (typeText == "课程") {
+                $(b).val(typeId)
+            } else if (typeText == "教师") {
+                $(b).val(typeId)
+            } else if (typeText == "机构") {
+                $(b).val(typeId)
+            } else {};
+        })
+    }
 
     $(document).ready(function() { //搜索按钮变色
-        $("#search-button").mouseenter(function() {
+        $("#searchButton").mouseenter(function() {
             $(this).css("background", "#6dd900");
         })
-        $("#search-button").mouseleave(function() {
-            $(this).css("background", "#85b200");
-        })
-        // 学堂在线部分
+        $("#searchButton").mouseleave(function() {
+                $(this).css("background", "#85b200");
+            })
+            // 学堂在线部分
         $(".red .classify-second li a,.blue .classify-second li a").mouseenter(function() {
             var s = $(this).parent().index(); //获取该a的父元素li的索引值
             var ss = $(this).parent().parent().parent().index(); //获取该a元素该行的li的索引值
             var gd = $(this).parent().parent().parent().next(".classify-second-hover").height(); //获取详细内容的高度
-            var jl = -gd + 1 + 41 * (ss / 2) + "px";
+            if (navigator.userAgent.indexOf("MSIE") > 0) {
+                var jl = -gd + 3 + 41 * (ss / 2) + "px";
+            } else {
+                var jl = -gd + 1 + 41 * (ss / 2) + "px";
+            }
             $(this).parent().css({ //显示该a的父元素li的背景三角形
                 background: 'url(imgs/sjx.png) no-repeat 50% 0%'
             });
@@ -115,8 +226,11 @@
             $(this).children("a").eq(0).mouseenter(function() {
                 var s = $(this).parent().index(); //获取该a的父元素li的索引值
                 var gd = $(this).parent().next(".classify-second-hover").height(); //获取详细内容的高度
-                var jl = -gd + 1 + 41 * (s / 2) + "px";
-                // alert(s);
+                if (navigator.userAgent.indexOf("MSIE") > 0) {
+                    var jl = -gd + 3 + 41 * (s / 2) + "px";
+                } else {
+                    var jl = -gd + 1 + 41 * (s / 2) + "px";
+                }
                 $(this).css({ //显示该a的背景三角形
                     background: '#6c9100 url(imgs/sjx.png) no-repeat 50% 0%'
                 });

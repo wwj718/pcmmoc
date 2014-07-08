@@ -8,17 +8,14 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="mycss2.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <link rel="stylesheet/less" type="text/css" href="css/styles.less">
     <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- 图片翻转插件JS -->
-    <script type="text/javascript" src="js/base.js"></script>
-    <script type="text/javascript" src="js/rotate3di.js"></script>
-    <!-- 图片翻转插件JS结束 -->
-    <!--[if lt IE 9]> 
-        <script src="js/css3-mediaqueries.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -56,18 +53,19 @@
                                     </div>
                                 </div>
                                 <!-- 搜索文本框 -->
-                                <div class="span4" id="searchTextWrap">
-                                    <form>
-                                        <input class="span4" type="text" id="searchText" placeholder="搜 “形势与政策”，感受国家名师风采">
-                                    </form>
-                                </div>
-                                <!-- 搜索文本框结束 -->
-                                <!-- 搜索按钮 -->
-                                <div class="span1" id="searchButtonWrap">
-                                    <form>
-                                        <button type="button" class="span1" id="search-button">搜索</button>
-                                    </form>
-                                </div>
+                                <form class="span5" action="" method="get" name="search">
+                                    <div class="row">
+                                        <input type="hidden" name="searchType" id="searchType" value="course">
+                                        <div class="span4" id="searchTextWrap">
+                                            <input class="span4" type="text" id="searchText" placeholder="搜 “形势与政策”，感受国家名师风采" name="searchText">
+                                        </div>
+                                        <!-- 搜索文本框结束 -->
+                                        <!-- 搜索按钮 -->
+                                        <div class="span1" id="searchButtonWrap">
+                                            <button type="button" class="span1" id="searchButton" name="searchButton">搜索</button>
+                                        </div>
+                                    </div>
+                                </form>
                                 <!-- 搜索按钮结束 -->
                             </div>
                         </div>
@@ -118,22 +116,22 @@
     <div id="selects">
         <div class="container">
             <div class="subjects">
-                <ul class="unstyled inline">
-                    <li class="triggers-wrap">
-                        <div class="collages-triggers">
-                            <ul class="collages-list unstyled">
-                                <li id="subject1"><a>学科1</a>
-                                </li>
-                                <li id="subject2"><a>学科2</a>
-                                </li>
-                                <li id="subject3"><a>学科3</a>
-                                </li>
-                            </ul>
-                            <div class="search-ico">
-                                <i></i>
-                            </div>
+                <div class="subject-wrap">
+                    <div class="list-wrap">
+                        <ul class="subject-list unstyled">
+                            <li><a>学科1</a>
+                            </li>
+                            <li><a>学科2</a>
+                            </li>
+                            <li><a>学科3</a>
+                            </li>
+                        </ul>
+                        <div class="search-ico2">
+                            <i></i>
                         </div>
-                    </li>
+                    </div>
+                </div>
+                <ul class="unstyled inline">
                     <li>
                         <a href="#">工学(<span>121</span>)</a>
                     </li>
@@ -202,22 +200,22 @@
                 </ul>
             </div>
             <div class="collages">
-                <ul class="unstyled inline">
-                    <li class="triggers-wrap">
-                        <div class="collages-triggers">
-                            <ul class="collages-list unstyled">
-                                <li id="subject1"><a>学术型大学</a>
-                                </li>
-                                <li id="subject2"><a>应用型大学</a>
-                                </li>
-                                <li id="subject3"><a>学术型大学</a>
-                                </li>
-                            </ul>
-                            <div class="search-ico">
-                                <i></i>
-                            </div>
+                <div class="collage-wrap">
+                    <div class="list-wrap">
+                        <ul class="collage-list unstyled">
+                            <li><a>学术性大学</a>
+                            </li>
+                            <li><a>应用型大学</a>
+                            </li>
+                            <li><a>综合型大学</a>
+                            </li>
+                        </ul>
+                        <div class="search-ico2">
+                            <i></i>
                         </div>
-                    </li>
+                    </div>
+                </div>
+                <ul class="unstyled inline">
                     <li><a href="#">全部(<span>316</span>)</a>
                     </li>
                     <li>
@@ -250,6 +248,101 @@
             </div>
         </div>
     </div>
+    <div id="selects-content">
+        <div class="container">
+            <ul class="unstyled content-list">
+                <li>
+                    <div class="content-title">
+                        <h1>系统工程</h1>
+                        <div>
+                            <img src="imgs/11.png" alt="Mike Ryan">
+                            <div class="teacher-info">
+                                <p>Mike Ryan</p>
+                                <p>麻省理工学院教授</p>
+                            </div>
+                        </div>
+                        <p>3学分 初级->高级</p>
+                    </div>
+                    <div class="content-details">
+                        <ul class="unstyled inline">
+                            <li>
+                                <img src="imgs/sk.jpg" alt="授课">授课到
+                                <span>12</span>讲</li>
+                            <li>
+                                <img src="imgs/jrgx.jpg" alt="更新">今日更新</li>
+                            <li class="teacher-online">
+                                <img src="imgs/jszx.jpg" alt="在线">教师在线</li>
+                        </ul>
+                        <p>系统工程从整体出发合理开发、设计、实施和运用系统的工程技术，利用电子计算机作为工具，对系统的结构、要素、信息和反馈等进行分析，以达到最优规划、最优设计、最优管理和最优控制的目的。系统工程是组织管理系统的规划、设计、试验和使用的科学方法。</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="imgs/1.jpg" alt="系统工程">
+                    </div>
+                    <div style="clear: both"></div>
+                </li>
+                <li>
+                    <div class="content-title">
+                        <h1>唐宋诗词人文解读</h1>
+                        <div>
+                            <img src="imgs/11.png" alt="Mike Ryan">
+                            <div class="teacher-info">
+                                <p>李康化</p>
+                                <p>上海交通大学教授</p>
+                            </div>
+                        </div>
+                        <p>2学分 入门级->高级</p>
+                    </div>
+                    <div class="content-details">
+                        <ul class="unstyled inline">
+                            <li>
+                                <img src="imgs/sk.jpg" alt="授课">授课到
+                                <span>5</span>讲</li>
+                            <li>
+                                <img src="imgs/jrgx.jpg" alt="更新">1天前更新</li>
+                            <li>
+                                <img src="imgs/jslx.jpg" alt="离线">教师离线</li>
+                        </ul>
+                        <p>唐宋诗词是中国文学史上的两颗明珠，唐代被称为诗的时代，宋代被称为词的时代。词源于民间，始于唐，兴于五代，盛于两宋。宋代物质生活的丰富，人们对文化生活的追求也更加强烈。唐代的诗人多是供皇室及其统治者御用的工具和玩物。宋代的词人已由被别人欣赏而一跃登上了政治舞台，成为宋代政治舞台上的主角。</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="imgs/3.jpg" alt="唐宋诗词人文解读">
+                    </div>
+                    <div style="clear: both"></div>
+                </li>
+                <li>
+                    <div class="content-title">
+                        <h1>市场营销概论</h1>
+                        <div>
+                            <img src="imgs/31.jpg" alt="David Bell">
+                            <div class="teacher-info">
+                                <p>David Bell</p>
+                                <p>哈佛大学教授</p>
+                            </div>
+                        </div>
+                        <p>2.5学分 初级->中级</p>
+                    </div>
+                    <div class="content-details">
+                        <ul class="unstyled inline">
+                            <li>
+                                <img src="imgs/sk.jpg" alt="授课">授课到
+                                <span>12</span>讲</li>
+                            <li>
+                                <img src="imgs/jrgx.jpg" alt="更新">2天前更新</li>
+                            <li>
+                                <img src="imgs/jslx.jpg" alt="离线">教师离线</li>
+                        </ul>
+                        <p>市场营销(Marketing)又称为市场学、市场行销或行销学，MBA、EMBA等经典商管课程均将市场营销作为对管理者进行管理和教育的重要模块包含在内。市场营销是指个人或集体通过交易其创造的产品或价值，以获得所需之物，实现双赢或多赢的过程。它包含两种含义，一种是动词的理解，指企业的具体活动或行为。</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="imgs/5.jpg" alt="市场营销概论">
+                    </div>
+                    <div style="clear: both"></div>
+                </li>
+            </ul>
+            <div class="selects-more"><a href="#">显示更多课程(<span>18</span>)......</a>
+            </div>
+        </div>
+    </div>
     <!-- 学科选择结束 -->
     <div id="footer">
         <div class="container">
@@ -277,7 +370,12 @@
     <script type="text/javascript">
     $(document).ready(function() {
         dropList(".drop-list li");
-        dropList2(".collages-list li");
+        dropList2(".subject-list li");
+        dropList2(".collage-list li")
+        clickList(".search-triggers");
+        clickList2(".subject-list");
+        clickList2(".collage-list");
+        changeType(".drop-list li", "#searchType");
     });
     </script>
 </body>
