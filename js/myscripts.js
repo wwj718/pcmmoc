@@ -1,71 +1,50 @@
-    //顶部下拉菜单的函数
+    //单击按钮后添加active类
+    function changeBackground(element, classes) {
+        $(element).click(function() {
+            $(this).parent().parent().find("a").removeClass();
+            $(this).addClass(classes);
+        })
+    };
 
-    function dropList(a) {
+    //顶部下拉菜单的函数
+    function dropList(a, b, c, ico) {
+        var aHeight = $(a).find("li").height();
+        var bHeight = aHeight * 3;
         $(a).mouseenter(function() {
-            $(this).parent().parent().css({
-                height: '114',
-                borderRight: '1px solid #85b200'
+            $(this).css({
+                height: bHeight,
+                // borderRight: border,
             });
-            $(this).parent().parent().find(".search-ico i").css({
+            $(this).find(ico).css({
                 borderColor: 'transparent transparent #85b200',
-                top: '14px',
+                top: b,
             });
         })
         $(a).mouseleave(function() {
-            $(this).parent().parent().css({
-                height: '38',
-                borderRight: '1px solid #85b200'
+            $(this).css({
+                height: aHeight,
+                // borderRight: border,
             });
-            $(this).parent().parent().find(".search-ico i").css({
+            $(this).find(ico).css({
                 borderColor: '#85b200 transparent transparent',
-                top: '18px',
+                top: c,
             });
         })
-        $(a).click(function() {
+        $(a).find("li").click(function() {
             //调整选择的搜索类型的位置
             var b = $(this).parent();
             var $a = $(this).detach();
             $(b).children().first().before($a);
             $(b).parent().css({
-                height: '38',
+                height: aHeight,
             });
         })
     };
-
-    function dropList2(a) {
-        $(a).mouseenter(function() {
-            $(this).parent().parent().css({
-                height: '90',
-            });
-            $(this).parent().parent().find(".search-ico2 i").css({
-                borderColor: 'transparent transparent #85b200',
-                top: '10px',
-            });
-        })
-        $(a).mouseleave(function() {
-            $(this).parent().parent().css({
-                height: '30',
-            });
-            $(this).parent().parent().find(".search-ico2 i").css({
-                borderColor: '#85b200 transparent transparent',
-                top: '14px',
-            });
-        })
-        $(a).click(function() {
-            var b = $(this).parent();
-            var $a = $(this).detach();
-            $(b).children().first().before($a);
-            $(this).parent().parent().css({
-                height: '30',
-            });
-        })
-    };
-
     //使移动端顶部的下拉列表功能
 
-    function clickList(a) {
+    function clickList(obj, b, c, ico) {
         //定义单击出li的高度及总的ul高度
-        var liHeight = $(a).find("li").height();
+        var liHeight = $(obj).find("li").height();
         var ulHeight = 3 * liHeight;
         //平台、设备和操作系统     
         var system = {
@@ -81,15 +60,15 @@
         //跳转语句     
         if (system.win || system.mac || system.xll) {} else {
             var count = 0;
-            $(a).click(function() {
+            $(obj).click(function() {
                 if (count == 1) {
                     $(this).css({
                         height: liHeight,
                     });
                     count--;
-                    $(this).parent().parent().find(".search-ico i").css({
+                    $(this).find(ico).css({
                         borderColor: '#85b200 transparent transparent',
-                        top: '18px',
+                        top: b,
                     });
                     $(this).find("a").css("background", "#fff");
                 } else if (count == 0) {
@@ -97,53 +76,9 @@
                         height: ulHeight,
                     });
                     count++;
-                    $(this).parent().parent().find(".search-ico i").css({
+                    $(this).find(ico).css({
                         borderColor: 'transparent transparent #85b200',
-                        top: '14px',
-                    });
-                }
-            });
-        }
-    };
-
-
-    function clickList2(a) {
-        //定义单击出li的高度及总的ul高度
-        var liHeight = $(a).find("li").height();
-        var ulHeight = 3 * liHeight;
-        //平台、设备和操作系统     
-        var system = {
-            win: false,
-            mac: false,
-            xll: false
-        };
-        //检测平台     
-        var p = navigator.platform;
-        system.win = p.indexOf("Win") == 0;
-        system.mac = p.indexOf("Mac") == 0;
-        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-        //跳转语句     
-        if (system.win || system.mac || system.xll) {} else {
-            var count = 0;
-            $(a).click(function() {
-                if (count == 1) {
-                    $(this).parent().css({
-                        height: liHeight,
-                    });
-                    count--;
-                    $(this).parent().find(".search-ico2 i").css({
-                        borderColor: '#85b200 transparent transparent',
-                        top: '14px',
-                    });
-                    $(this).find("a").css("background", "#eee");
-                } else if (count == 0) {
-                    $(this).parent().css({
-                        height: ulHeight,
-                    });
-                    count++;
-                    $(this).parent().find(".search-ico2 i").css({
-                        borderColor: 'transparent transparent #85b200',
-                        top: '10px',
+                        top: c,
                     });
                 }
             });
@@ -167,6 +102,103 @@
         })
     }
 
+    //学堂在线部分
+    function showDetails(obj) {
+        $(obj).mouseenter(function() {
+            var oLi = $(this).parent().parent(); //获取该元素所在行的li
+            var oLiHover = oLi.next();
+            var s = $(this).index(); //获取该元素的索引值
+            var iLiIndex = oLi.index(); //获取该元素所在行的li的索引值
+            var iLiHeight = oLi.height();
+            var iDetailsHeight = oLi.next().height(); //获取详细内容的高度
+            var iBorder = parseInt(oLi.css("border-top-width")); //获取该行li的上边框宽度
+            var sTop = -iDetailsHeight + (iBorder + iLiHeight) * (iLiIndex / 2) + "px";
+            $(this).css({ //显示该元素的背景三角形
+                background: 'url(imgs/sjx.png) no-repeat 50% 0%'
+            });
+            oLiHover.css({
+                display: 'block', //显示该a对应的详细内容
+                top: sTop //改变详细内容的位置
+            });
+            oLiHover.mouseenter(function() { //鼠标移动到该a对应的详细内容上时的动作
+                $(obj).css({
+                    background: 'none'
+                });
+                $(this).prev().find("ul.classify-second li").eq(s).css({ //显示该详细信息对应的li的背景三角形
+                    background: 'url(imgs/sjx.png) no-repeat 50% 0%'
+                });
+                $(this).css({ //显示该详细内容
+                    display: 'block',
+                    left: '0'
+                });
+                $(this).mouseleave(function() { //鼠标移开详细内容时的动作
+                    $(this).css({
+                        display: 'none'
+                    });
+                    $(obj).css({
+                        background: 'none'
+                    });
+                })
+            })
+        })
+        $(obj).mouseleave(function() { //鼠标移开a对应的li时的动作
+            var oLi = $(this).parent().parent(); //获取该元素所在行的li
+            var oLiHover = oLi.next();
+            $(this).css({
+                background: 'none'
+            });
+            oLiHover.css({
+                display: 'none'
+            });
+        })
+    }
+
+
+    // 学堂在线中间部分
+    function showDetailsCenter(obj) {
+        $(obj).each(function() {
+            $(this).children("a").eq(0).mouseenter(function() {
+                var oLi = $(this).parent(); //获取该a的父元素li
+                var oLiHover = oLi.next();
+                var iIndex = oLi.index(); //获取该a的父元素li的索引值
+                var iLiHeight = oLi.height();
+                var iDetailsHeight = oLiHover.height(); //获取详细内容的高度
+                var iBorder = parseInt(oLi.css("border-top-width")); //获取该行li的上边框宽度
+                var sTop = -iDetailsHeight + 1 + (iLiHeight + iBorder) * (iIndex / 2) + "px";
+                //显示该a的背景三角形
+                $(this).css("background", "#6c9100 url(imgs/sjx.png) no-repeat 50% 0%");
+                oLiHover.css({
+                    display: 'block', //显示该a对应的详细内容
+                    top: sTop //改变详细内容的位置
+                });
+                oLiHover.mouseenter(function() { //鼠标移动到该a对应的详细内容上时的动作
+                    $(obj).children("a").css("background", "#6c9100");
+                    //显示该详细信息对应的li的背景三角形
+                    $(this).prev().find("a").eq(0).css("background", "#6c9100 url(imgs/sjx.png) no-repeat 50% 0%");
+                    $(this).css({ //显示该详细内容
+                        display: 'block',
+                        left: '0',
+                    });
+                    $(this).mouseleave(function() { //鼠标移开详细内容时的动作
+                        $(this).css("display", "none");
+                        $(this).prev().find("a").css("background", "#6c9100");
+                    })
+                })
+            })
+            $(this).children("a").mouseleave(function() {
+                var oLi = $(this).parent(); //获取该a的父元素li
+                var oLiHover = oLi.next();
+                $(this).css({
+                    background: '#6c9100'
+                });
+                oLiHover.css({
+                    display: 'none'
+                });
+            });
+
+        })
+    }
+
     $(document).ready(function() { //搜索按钮变色
         $("#searchButton").mouseenter(function() {
             $(this).css("background", "#6dd900");
@@ -174,117 +206,7 @@
         $("#searchButton").mouseleave(function() {
                 $(this).css("background", "#85b200");
             })
-            // 学堂在线部分
-        $(".red .classify-second li a,.blue .classify-second li a").mouseenter(function() {
-            var s = $(this).parent().index(); //获取该a的父元素li的索引值
-            var ss = $(this).parent().parent().parent().index(); //获取该a元素该行的li的索引值
-            var gd = $(this).parent().parent().parent().next(".classify-second-hover").height(); //获取详细内容的高度
-            if (navigator.userAgent.indexOf("MSIE") > 0) {
-                var jl = -gd + 3 + 41 * (ss / 2) + "px";
-            } else {
-                var jl = -gd + 1 + 41 * (ss / 2) + "px";
-            }
-            $(this).parent().css({ //显示该a的父元素li的背景三角形
-                background: 'url(imgs/sjx.png) no-repeat 50% 0%'
-            });
-            $(this).parent().parent().parent().next(".classify-second-hover").css({
-                display: 'inline-block', //显示该a对应的详细内容
-                top: jl //改变详细内容的位置
-            });
-            $(".red .classify-second-hover,.blue .classify-second-hover").mouseenter(function() { //鼠标移动到该a对应的详细内容上时的动作
-                $(".red .classify-second li,.blue .classify-second li").css({
-                    background: 'none'
-                });
-                $(this).prev().find("ul.classify-second li").eq(s).css({ //显示该详细信息对应的li的背景三角形
-                    background: 'url(imgs/sjx.png) no-repeat 50% 0%'
-                });
-                $(this).css({ //显示该详细内容
-                    display: 'inline-block',
-                    left: '0'
-                });
-                $(this).mouseleave(function() { //鼠标移开详细内容时的动作
-                    $(this).css({
-                        display: 'none'
-                    });
-                    $(".red .classify-second li,.blue .classify-second li").css({
-                        background: 'none'
-                    });
-                })
-            })
-        })
-        $(".red .classify-second li,.blue .classify-second li").mouseleave(function() { //鼠标移开a对应的li时的动作
-            $(this).css({
-                background: 'none'
-            });
-            $(this).parent().parent().next(".classify-second-hover").css({
-                display: 'none'
-            });
-        })
-
-        // 学堂在线中间部分
-        $(".green .classify-first li.green-classes").each(function() {
-            $(this).children("a").eq(0).mouseenter(function() {
-                var s = $(this).parent().index(); //获取该a的父元素li的索引值
-                var gd = $(this).parent().next(".classify-second-hover").height(); //获取详细内容的高度
-                if (navigator.userAgent.indexOf("MSIE") > 0) {
-                    var jl = -gd + 3 + 41 * (s / 2) + "px";
-                } else {
-                    var jl = -gd + 1 + 41 * (s / 2) + "px";
-                }
-                $(this).css({ //显示该a的背景三角形
-                    background: '#6c9100 url(imgs/sjx.png) no-repeat 50% 0%'
-                });
-                $(this).parent().next(".classify-second-hover").css({
-                    display: 'inline-block', //显示该a对应的详细内容
-                    top: jl //改变详细内容的位置
-                });
-                $(".green .classify-second-hover").mouseenter(function() { //鼠标移动到该a对应的详细内容上时的动作
-                    $(".green .classify-first li").eq(0).find("a").css({
-                        background: '#6c9100'
-                    });
-                    $(".green .classify-first li").eq(2).find("a").css({
-                        background: '#6c9100'
-                    });
-                    $(".green .classify-first li").eq(4).find("a").css({
-                        background: '#6c9100'
-                    });
-                    $(".green .classify-first li").eq(6).find("a").css({
-                        background: '#6c9100'
-                    });
-                    $(".green .classify-first li").eq(8).find("a").css({
-                        background: '#6c9100'
-                    });
-                    $(this).parent().find("li").eq(s).find("a").eq(0).css({ //显示该详细信息对应的li的背景三角形
-                        background: '#6c9100 url(imgs/sjx.png) no-repeat 50% 0%'
-                    });
-                    $(this).css({ //显示该详细内容
-                        display: 'inline-block',
-                        left: '0',
-                    });
-                    $(this).mouseleave(function() { //鼠标移开详细内容时的动作
-                        $(this).css({
-                            display: 'none'
-                        });
-                        $(this).prev("li").find("a").css({
-                            background: '#6c9100'
-                        });
-                    })
-                })
-            })
-
-            $(this).children("a").mouseleave(function() {
-                $(this).css({
-                    background: '#6c9100'
-                });
-                $(this).parent().next(".classify-second-hover").css({
-                    display: 'none'
-                });
-            });
-
-        })
-
-
-        // 最新上线切换
+            // 最新上线切换
         if (window.innerWidth < 768) { //判断浏览器分辨率是否小于等于768px
             var a = $("#latest-row").width(); //获取latest-row的宽度
             $(".latest-content").width(a); //将.latest-content的宽度设为latest-row
@@ -308,8 +230,6 @@
             });
         })
         $(".title-change ul li").click(function() {
-            $(".title-change ul li a").removeClass("title-change-active");
-            $(this).find("a").addClass("title-change-active");
             var a = $(this).index(); //获取点击的li的索引
             var b = $(".latest-content").width(); //获取内容所占据的宽度
             var c = a * (-b); //设置将要移动的距离

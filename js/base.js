@@ -35,18 +35,18 @@ function on_ready() {
         );
     });
     
-    $(window).bind('scroll', function () {
-        if ($(this).scrollTop() > $('#footerCenter').offset().top - $(window).height() - 60) {
-            if ($('#earthMoonLink').hasClass('more')) {
-                $('#earthMoonLink').removeClass('more').text('earth').attr({href: '#Earth', title: 'Back to Top'});
-            }
+    // $(window).bind('scroll', function () {
+    //     if ($(this).scrollTop() > $('#footerCenter').offset().top - $(window).height() - 60) {
+    //         if ($('#earthMoonLink').hasClass('more')) {
+    //             $('#earthMoonLink').removeClass('more').text('earth').attr({href: '#Earth', title: 'Back to Top'});
+    //         }
 
-        } else {
-            if (!$('#earthMoonLink').hasClass('more')) {
-                $('#earthMoonLink').addClass('more').text('moon').attr({href: '#Moon', title: 'Jump to Footer'});
-            }
-        }
-    });
+    //     } else {
+    //         if (!$('#earthMoonLink').hasClass('more')) {
+    //             $('#earthMoonLink').addClass('more').text('moon').attr({href: '#Moon', title: 'Jump to Footer'});
+    //         }
+    //     }
+    // });
 }
 
 
